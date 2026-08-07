@@ -55,8 +55,7 @@ startButton.addEventListener("click", async () => {
 
     iniciou = true;
 
-    intro.classList.add("hide");
-
+    
     try{
 
         await video.play();
@@ -67,6 +66,10 @@ startButton.addEventListener("click", async () => {
 
     }
 
+});
+
+video.addEventListener("playing", () => {
+    intro.classList.add("hide");
 });
 
 window.addEventListener("load", atualizarPlayer);
