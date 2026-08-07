@@ -13,14 +13,6 @@ const startButton = document.getElementById("startButton");
 
 // Vídeo
 const video = document.getElementById("video");
-video.load();
-video.addEventListener("loadeddata", () => {
-
-    video.pause();
-
-    video.currentTime = 0;
-
-});
 
 // Hotspots
 const hotspots = document.getElementById("hotspots");
