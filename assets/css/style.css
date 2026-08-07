@@ -438,22 +438,35 @@ body{
 #intro{
 
     position:absolute;
-
     inset:0;
 
     display:flex;
 
     justify-content:center;
-
     align-items:center;
 
-    background:rgba(0,0,0,.25);
-
-    backdrop-filter:blur(6px);
+    background:#000;
 
     z-index:999;
 
     transition:.8s;
+
+}
+
+#introPoster{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    z-index:1;
+
+    filter:blur(3px);
+
+    transform:scale(1.03);
 
 }
 
@@ -468,6 +481,10 @@ body{
 }
 
 #introContent{
+
+    position:relative;
+
+    z-index:2;
 
     text-align:center;
 
