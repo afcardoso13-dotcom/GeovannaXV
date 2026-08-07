@@ -73,13 +73,28 @@ video.addEventListener("playing", () => {
     intro.classList.add("hide");
 });
 
-window.addEventListener("load", atualizarPlayer);
+window.addEventListener("load", () => agendarAtualizacaoPlayer());
 
-window.addEventListener("resize", atualizarPlayer);
+window.addEventListener("resize", () => agendarAtualizacaoPlayer());
 
-video.addEventListener("loadedmetadata", atualizarPlayer);
+video.addEventListener("loadedmetadata", () => agendarAtualizacaoPlayer());
 
-video.addEventListener("play", atualizarPlayer);
+video.addEventListener("play", () => agendarAtualizacaoPlayer());
+
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+        agendarAtualizacaoPlayer(true);
+    }
+});
+
+window.addEventListener("pageshow", () => agendarAtualizacaoPlayer(true));
+
+window.addEventListener("focus", () => agendarAtualizacaoPlayer(true));
+
+if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", () => agendarAtualizacaoPlayer());
+    window.visualViewport.addEventListener("scroll", () => agendarAtualizacaoPlayer());
+}
 
 // ======================================================
 // ATIVAR HOTSPOTS
@@ -442,19 +457,42 @@ btnPresentes.addEventListener("click", () => {
 
 });
 
+let atualizarPlayerTimer = null;
+
+function agendarAtualizacaoPlayer(forcarRepasses) {
+
+    requestAnimationFrame(() => {
+        atualizarPlayer();
+
+        if (!forcarRepasses) return;
+
+        clearTimeout(atualizarPlayerTimer);
+        atualizarPlayerTimer = setTimeout(() => {
+            atualizarPlayer();
+            setTimeout(atualizarPlayer, 250);
+        }, 50);
+    });
+
+}
+
 function atualizarPlayer() {
 
     const player = document.getElementById("player");
-    const video = document.getElementById("video");
-    const hotspots = document.getElementById("hotspots");
-    const effects = document.getElementById("effects");
+    const videoEl = document.getElementById("video");
+    const hotspotsEl = document.getElementById("hotspots");
+    const effectsEl = document.getElementById("effects");
 
-    const playerRect = player.getBoundingClientRect();
+    if (!player || !videoEl || !hotspotsEl) return;
 
-    const containerWidth = player.clientWidth;
-    const containerHeight = player.clientHeight;
+    const containerWidth = player.clientWidth || window.innerWidth;
+    const containerHeight = player.clientHeight || window.innerHeight;
 
-    const videoRatio = video.videoWidth / video.videoHeight;
+    const vw = videoEl.videoWidth;
+    const vh = videoEl.videoHeight;
+
+    if (!vw || !vh) return;
+
+    const videoRatio = vw / vh;
     const containerRatio = containerWidth / containerHeight;
 
     let realWidth;
@@ -477,8 +515,12 @@ function atualizarPlayer() {
     const left = (containerWidth - realWidth) / 2;
     const top = (containerHeight - realHeight) / 2;
 
-    [hotspots, effects].forEach(el => {
+    [hotspotsEl, effectsEl].forEach(el => {
 
+        if (!el) return;
+
+        el.style.right = "auto";
+        el.style.bottom = "auto";
         el.style.left = left + "px";
         el.style.top = top + "px";
         el.style.width = realWidth + "px";

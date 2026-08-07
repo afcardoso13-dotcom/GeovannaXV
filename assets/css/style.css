@@ -13,6 +13,7 @@ body{
 
     width:100%;
     height:100%;
+    height:-webkit-fill-available;
 
     overflow:hidden;
 
@@ -46,7 +47,9 @@ body{
     position:relative;
 
     width:100vw;
+    height:100%;
     height:100dvh;
+    height:-webkit-fill-available;
 
     display:flex;
     justify-content:center;
@@ -75,10 +78,23 @@ body{
    HOTSPOTS
 ===================================================== */
 
-#hotspots{
+#hotspots,
+#effects{
 
     position:absolute;
-    inset:0;
+
+    left:0;
+    top:0;
+
+    right:auto;
+    bottom:auto;
+
+    width:100%;
+    height:100%;
+
+}
+
+#hotspots{
 
     z-index:20;
 
@@ -87,8 +103,6 @@ body{
 }
 
 #effects{
-
-    position:absolute;
 
     z-index:10;
 
@@ -108,9 +122,9 @@ body{
 
     border-radius:50%;
 
-    background:rgba(255,0,0,.35);
+    background:transparent;
 
-    border:2px solid red;
+    border:none;
 
     cursor:pointer;
 
