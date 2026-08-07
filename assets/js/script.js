@@ -69,6 +69,14 @@ startButton.addEventListener("click", async () => {
 
 });
 
+window.addEventListener("load", atualizarPlayer);
+
+window.addEventListener("resize", atualizarPlayer);
+
+video.addEventListener("loadedmetadata", atualizarPlayer);
+
+video.addEventListener("play", atualizarPlayer);
+
 // ======================================================
 // ATIVAR HOTSPOTS
 // ======================================================
@@ -429,3 +437,49 @@ btnPresentes.addEventListener("click", () => {
     });
 
 });
+
+function atualizarPlayer() {
+
+    const player = document.getElementById("player");
+    const video = document.getElementById("video");
+    const hotspots = document.getElementById("hotspots");
+    const effects = document.getElementById("effects");
+
+    const playerRect = player.getBoundingClientRect();
+
+    const containerWidth = player.clientWidth;
+    const containerHeight = player.clientHeight;
+
+    const videoRatio = video.videoWidth / video.videoHeight;
+    const containerRatio = containerWidth / containerHeight;
+
+    let realWidth;
+    let realHeight;
+
+    if (containerRatio > videoRatio) {
+
+        // Barras laterais
+        realHeight = containerHeight;
+        realWidth = realHeight * videoRatio;
+
+    } else {
+
+        // Barras superior/inferior
+        realWidth = containerWidth;
+        realHeight = realWidth / videoRatio;
+
+    }
+
+    const left = (containerWidth - realWidth) / 2;
+    const top = (containerHeight - realHeight) / 2;
+
+    [hotspots, effects].forEach(el => {
+
+        el.style.left = left + "px";
+        el.style.top = top + "px";
+        el.style.width = realWidth + "px";
+        el.style.height = realHeight + "px";
+
+    });
+
+}
