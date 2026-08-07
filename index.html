@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Geovanna XV</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<main id="app">
+
+    <!-- ==========================================================
+     TELA DE ABERTURA
+========================================================== -->
+
+<section id="intro">
+
+    <div id="introContent">
+
+        <h1>
+            Clique para viver<br>
+            um dia inesquecível !
+        </h1>
+
+        <button id="startButton">
+            Abrir Convite
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- PLAYER -->
+    <div id="player">
+
+        <!-- Vídeo -->
+        <video id="video" playsinline preload="auto">
+
+            <source src="assets/videos/progetogeoxv_2.mp4" type="video/mp4">
+
+            Seu navegador não suporta vídeos.
+
+        </video>
+
+        <!-- Efeitos -->
+        <div id="effects">
+
+            <div class="glow" id="glowWhatsapp"></div>
+
+            <div class="glow" id="glowGrandeDia"></div>
+
+            <div class="glow" id="glowLocalizacao"></div>
+
+            <div class="glow" id="glowDressCode"></div>
+
+            <div class="glow" id="glowPresentes"></div>
+
+        </div>
+
+        <!-- Hotspots -->
+        <div id="hotspots">
+
+            <div class="hotspot" id="btnWhatsapp"></div>
+
+            <div class="hotspot" id="btnGrandeDia"></div>
+
+            <div class="hotspot" id="btnLocalizacao"></div>
+
+            <div class="hotspot" id="btnDressCode"></div>
+
+            <div class="hotspot" id="btnPresentes"></div>
+
+        </div>
+
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Modal Universal -->
+    <div id="modal">
+
+        <div class="modal-box">
+
+            <!-- Fechar -->
+            <button id="closeModal">&times;</button>
+
+            <!-- Imagem Superior -->
+            <img
+                id="modalImage"
+                src=""
+                alt=""
+            >
+
+            <!-- Título -->
+            <h2 id="modalTitle"></h2>
+
+            <!-- Texto -->
+           <div id="modalText"></div>
+
+            <!-- Botão -->
+            <a
+                id="modalButton"
+                href="#"
+                target="_blank"
+            >
+
+                <img
+                    id="modalButtonIcon"
+                    src=""
+                    alt=""
+                >
+
+                <span id="modalButtonText"></span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
