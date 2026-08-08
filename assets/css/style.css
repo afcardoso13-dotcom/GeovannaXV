@@ -584,30 +584,13 @@ select{
     font-family:'Cormorant Garamond', serif;
 }
 
+#modalText{
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+}
+
 #modalText::-webkit-scrollbar{
-
-    width:8px;
-
-}
-
-#modalText::-webkit-scrollbar-track{
-
-    background:transparent;
-
-}
-
-#modalText::-webkit-scrollbar-thumb{
-
-    background:rgba(255,255,255,.30);
-
-    border-radius:20px;
-
-}
-
-#modalText::-webkit-scrollbar-thumb:hover{
-
-    background:rgba(255,255,255,.50);
-
+    display:none;
 }
 /* =====================================================
    O GRANDE DIA — CONTAGEM REGRESSIVA
@@ -656,7 +639,7 @@ select{
 
 .evento-hora{
     position:relative;
-    left:-22px;
+    left:-20px;
 
     margin:10px 0 20px;
     font-family:'Cormorant Garamond', serif;
