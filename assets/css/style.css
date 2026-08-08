@@ -496,7 +496,15 @@ body{
 
 #introContent{
 
-    position:relative;
+    position:absolute;
+
+    top:20%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(88%, 500px);
 
     z-index:2;
 
@@ -506,29 +514,99 @@ body{
 
 #intro h1{
 
-    font-family:'Alex Brush', cursive;
+    display:flex;
 
-    font-size:42px;
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0;
+
+    padding:0;
 
     font-weight:400;
 
     color:#FFFFFF;
 
-    line-height:1.20;
-
-    letter-spacing:.5px;
+    text-align:center;
 
     text-shadow:
-        0 0 10px rgba(255,255,255,.22),
-        0 0 24px rgba(173,216,255,.15);
+        0 0 3px rgba(255,255,255,.95),
+        0 0 9px rgba(86,178,255,.95),
+        0 0 18px rgba(52,146,255,.78),
+        0 0 32px rgba(47,139,255,.55);
 
     animation:titleGlow 3.5s ease-in-out infinite;
 
 }
 
+.intro-line{
+
+    display:block;
+
+    font-family:'Cormorant Garamond', serif;
+
+    text-transform:uppercase;
+
+    color:#FFFFFF;
+
+    line-height:1;
+
+}
+
+.intro-line-main{
+
+    font-size:clamp(24px, 5.2vw, 38px);
+
+    font-weight:600;
+
+    letter-spacing:.09em;
+
+}
+
+.intro-line-sub{
+
+    margin-top:7px;
+
+    font-size:clamp(22px, 4.6vw, 34px);
+
+    font-weight:600;
+
+    letter-spacing:.13em;
+
+}
+
+.intro-script{
+
+    display:block;
+
+    margin-top:3px;
+
+    font-family:'Alex Brush', cursive;
+
+    font-size:clamp(46px, 7.2vw, 66px);
+
+    font-weight:400;
+
+    line-height:.95;
+
+    letter-spacing:.01em;
+
+    color:#FFFFFF;
+
+    text-shadow:
+        0 0 3px rgba(255,255,255,.98),
+        0 0 10px rgba(92,190,255,.98),
+        0 0 22px rgba(48,151,255,.85),
+        0 0 38px rgba(44,136,255,.60);
+
+}
+
 #startButton{
 
-    margin-top:40px;
+    margin-top:118px;
 
     padding:18px 46px;
 
@@ -596,35 +674,23 @@ body{
 }
 @keyframes titleGlow{
 
-    0%{
+    0%, 100%{
 
         text-shadow:
-
-            0 0 8px rgba(255,255,255,.18),
-
-            0 0 18px rgba(173,216,255,.10);
+            0 0 3px rgba(255,255,255,.95),
+            0 0 9px rgba(86,178,255,.88),
+            0 0 18px rgba(52,146,255,.68),
+            0 0 30px rgba(47,139,255,.42);
 
     }
 
     50%{
 
         text-shadow:
-
-            0 0 18px rgba(255,255,255,.35),
-
-            0 0 35px rgba(173,216,255,.20),
-
-            0 0 50px rgba(255,223,140,.10);
-
-    }
-
-    100%{
-
-        text-shadow:
-
-            0 0 8px rgba(255,255,255,.18),
-
-            0 0 18px rgba(173,216,255,.10);
+            0 0 4px rgba(255,255,255,1),
+            0 0 12px rgba(105,200,255,1),
+            0 0 25px rgba(52,155,255,.92),
+            0 0 44px rgba(47,139,255,.68);
 
     }
 
@@ -719,270 +785,3 @@ INTRODUÇÃO DA LISTA DE PRESENTES
 
 }
 
-
-
-/* =====================================================
-   O GRANDE DIA
-===================================================== */
-
-.grande-dia{
-
-    width:100%;
-
-    text-align:center;
-
-}
-
-.evento-data,
-.evento-hora{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    margin:12px 0;
-
-    padding:14px 16px;
-
-    border-radius:16px;
-
-    text-align:left;
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,215,120,.18);
-
-}
-
-.evento-icone{
-
-    font-size:25px;
-
-    flex-shrink:0;
-
-}
-
-.evento-data strong,
-.evento-hora strong{
-
-    display:block;
-
-    color:#FFFFFF;
-
-    font-size:16px;
-
-}
-
-.evento-data small,
-.evento-hora small{
-
-    display:block;
-
-    margin-top:4px;
-
-    color:rgba(255,255,255,.68);
-
-    font-size:12px;
-
-}
-
-.contagem-titulo{
-
-    margin:22px 0 12px;
-
-    color:#FFE3A5;
-
-    font-size:15px;
-
-}
-
-.countdown{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:7px;
-
-    width:100%;
-
-}
-
-.countdown-item{
-
-    padding:12px 5px;
-
-    border-radius:14px;
-
-    background:rgba(255,255,255,.09);
-
-    border:1px solid rgba(255,215,120,.20);
-
-}
-
-.countdown-item strong{
-
-    display:block;
-
-    color:#FFFFFF;
-
-    font-size:24px;
-
-    line-height:1.1;
-
-}
-
-.countdown-item span{
-
-    display:block;
-
-    margin-top:6px;
-
-    color:#FFE3A5;
-
-    font-size:9px;
-
-    letter-spacing:.4px;
-
-}
-
-.evento-mensagem{
-
-    margin-top:20px;
-
-    color:rgba(255,255,255,.85);
-
-    font-size:14px;
-
-    line-height:1.7;
-
-}
-
-.evento-chegou{
-
-    grid-column:1 / -1;
-
-    padding:22px 10px;
-
-    border-radius:16px;
-
-    color:#FFE3A5;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,215,120,.30);
-
-}
-
-
-/* =====================================================
-   DRESS CODE
-===================================================== */
-
-.dress-code{
-
-    text-align:left;
-
-}
-
-.dress-intro{
-
-    color:#F5F5F5;
-
-    font-size:15px;
-
-    line-height:1.8;
-
-    text-align:center;
-
-    margin-bottom:14px;
-
-}
-
-.dress-code .modal-card{
-
-    margin:14px 0;
-
-}
-
-.dress-code .modal-card p{
-
-    line-height:1.75;
-
-}
-
-.dress-alert{
-
-    margin-top:16px;
-
-    padding:18px;
-
-    border-radius:18px;
-
-    text-align:center;
-
-    background:rgba(157,190,234,.10);
-
-    border:1px solid rgba(255,215,120,.30);
-
-}
-
-.dress-alert strong{
-
-    color:#FFE3A5;
-
-}
-
-.dress-alert p{
-
-    margin-top:10px;
-
-    color:#F5F5F5;
-
-    font-size:14px;
-
-    line-height:1.75;
-
-}
-
-@media (max-width:480px){
-
-    .modal-box{
-
-        padding:28px 22px;
-
-        max-height:90vh;
-
-    }
-
-    .countdown{
-
-        gap:5px;
-
-    }
-
-    .countdown-item{
-
-        padding:10px 3px;
-
-    }
-
-    .countdown-item strong{
-
-        font-size:20px;
-
-    }
-
-    .countdown-item span{
-
-        font-size:8px;
-
-    }
-
-}

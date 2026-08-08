@@ -266,70 +266,7 @@ btnGrandeDia.addEventListener("click", () => {
 
     animarBotao(btnGrandeDia);
 
-    abrirModal({
-
-        image:"",
-
-        title:"✨ O Grande Dia",
-
-        text:`
-            <div class="grande-dia">
-
-                <div class="evento-data">
-                    <span class="evento-icone">📅</span>
-                    <div>
-                        <strong>19 de dezembro de 2026</strong>
-                        <small>Sábado</small>
-                    </div>
-                </div>
-
-                <div class="evento-hora">
-                    <span class="evento-icone">🕐</span>
-                    <div>
-                        <strong>20:00</strong>
-                        <small>Horário da celebração</small>
-                    </div>
-                </div>
-
-                <p class="contagem-titulo">Faltam apenas...</p>
-
-                <div class="countdown" id="countdown">
-
-                    <div class="countdown-item">
-                        <strong id="countDays">--</strong>
-                        <span>DIAS</span>
-                    </div>
-
-                    <div class="countdown-item">
-                        <strong id="countHours">--</strong>
-                        <span>HORAS</span>
-                    </div>
-
-                    <div class="countdown-item">
-                        <strong id="countMinutes">--</strong>
-                        <span>MINUTOS</span>
-                    </div>
-
-                    <div class="countdown-item">
-                        <strong id="countSeconds">--</strong>
-                        <span>SEGUNDOS</span>
-                    </div>
-
-                </div>
-
-                <p class="evento-mensagem">
-                    Prepare-se para viver uma noite inesquecível,
-                    cheia de magia, alegria e momentos especiais. 💙✨
-                </p>
-
-            </div>
-        `,
-
-        button:null
-
-    });
-
-    iniciarContagemRegressiva();
+    console.log("Grande Dia");
 
 });
 
