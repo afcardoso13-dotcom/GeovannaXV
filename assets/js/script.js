@@ -203,17 +203,27 @@ function abrirModal(config){
 
     if(config.button){
 
-        modalButton.style.display = "flex";
+    modalButton.style.display = "flex";
+
+    // Ícone opcional
+    if(config.button.icon){
 
         modalButtonIcon.src = config.button.icon;
-
-        modalButtonText.textContent = config.button.text;
-
-        modalButton.href = config.button.link;
+        modalButtonIcon.style.display = "block";
 
     }else{
 
-        modalButton.style.display = "none";
+        modalButtonIcon.style.display = "none";
+
+    }
+
+    modalButtonText.textContent = config.button.text;
+
+    modalButton.href = config.button.link;
+
+    }else{
+
+    modalButton.style.display = "none";
 
     }
 
@@ -471,125 +481,28 @@ btnPresentes.addEventListener("click", () => {
 
         title:"🎁 Sugestão de Presentes",
 
-         text:`
+        text:`
             <div class="presentes-intro">
 
-            <strong>Sua presença é o meu maior presente.</strong>
+                <strong>Sua presença é o meu maior presente.</strong>
 
-            <br><br>
+                <br><br>
 
-            Se, além disso, você desejar me presentear, deixei uma lista de sugestões para facilitar sua escolha.
+                Se, além disso, você desejar me presentear,
+                deixei uma lista de sugestões para facilitar sua escolha.
 
-            <br><br>
+                <br><br>
 
-            Mas o que realmente vai tornar esse dia inesquecível é ter você ao meu lado, celebrando e aproveitando cada momento comigo.
-
-            </div>
-
-            <div class="modal-card">
-
-            <h3>✨ Skincare</h3>
-
-            <p>
-
-                • Produtos para cuidados com a pele.<br>
-                • Hidratantes.<br>
-                • Séruns.<br>
-                • Protetor solar.<br>
-                • Máscaras faciais e itens para pele.
-
-            </p>
+                Mas o que realmente vai tornar esse dia inesquecível
+                é ter você ao meu lado, celebrando e aproveitando cada momento comigo.
 
             </div>
+        `,
 
-            <div class="modal-card">
-
-            <h3>🌸 Perfumaria e Autocuidado</h3>
-
-            <p>
-
-                • Perfumes.<br>
-                • Body Splash.<br>
-                • Cremes hidratantes.<br>
-                • Esfoliantes.<br>
-                • Óleos corporais.<br>
-                • Produtos para banho.
-
-            </p>
-
-             </div>
-
-            <div class="modal-card">
-
-            <h3>🩷 Cuidados com o Cabelo</h3>
-
-            <p>
-
-                • Máscaras de hidratação.<br>
-                • Máscaras de reconstrução.<br>
-                • Óleos capilares.<br>
-                • Produtos para cronograma capilar.
-
-            </p>
-
-            </div>
-
-             <div class="modal-card">
-
-            <h3>💍 Acessórios</h3>
-
-            <p>
-
-                Se optar por semijoias ou acessórios, minha preferência é por peças na cor <strong>prata</strong>.
-
-            </p>
-
-            </div>
-
-            <div class="modal-card">
-
-            <h3>🛍️ Lojas que eu adoro</h3>
-
-            <p>
-
-                • Cotton On<br>
-                • YouCom<br>
-                • Pop Me<br>
-                • Zara<br>
-                • Sephora<br>
-                • Nike
-
-            </p>
-
-            </div>
-
-            <div class="modal-card">
-
-            <h3>👟 Calçados</h3>
-
-            <p>
-
-                Se escolher um calçado, eu amo <strong>Crocs</strong> em cores claras ou modelos temáticos de animações, como <strong>Toy Story</strong>, <strong>Carros</strong> e outros personagens.
-
-            </p>
-
-            </div>
-
-            <div class="modal-card"> 
-
-            <h3>👚 Tamanhos</h3> 
-
-            <p> 
-
-            • Calça: <strong>34</strong><br> 
-            • Blusas: <strong>PP ou P</strong><br> 
-            • Calçados: <strong>35</strong> 
-
-            </p> 
-
-            </div>
-`,
-        button:null
+        button:{
+            text:"🎁 Ver Lista de Presentes",
+            link:"COLOQUE_AQUI_O_LINK"
+        }
 
     });
 
