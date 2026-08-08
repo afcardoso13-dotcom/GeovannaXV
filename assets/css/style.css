@@ -656,7 +656,7 @@ select{
 
 .evento-hora{
     position:relative;
-    left:-25px;
+    left:-22px;
 
     margin:10px 0 20px;
     font-family:'Cormorant Garamond', serif;
@@ -790,5 +790,5 @@ INTRODUÇÃO DA LISTA DE PRESENTES
 }
 .grande-dia-title{
     position:relative;
-    left:-25px;
+    left:-23px;
 }
