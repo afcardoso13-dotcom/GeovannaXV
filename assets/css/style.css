@@ -480,6 +480,11 @@ body{
     transition:.35s ease;
 }
 
+    #startJewel:not(.jewel-ready){
+    opacity:0;
+    visibility:hidden;
+}
+
 #startJewel::after{
 
     content:"";

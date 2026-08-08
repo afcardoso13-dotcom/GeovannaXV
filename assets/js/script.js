@@ -743,6 +743,7 @@ function atualizarPlayer() {
         startJewelEl.style.right = "auto";
         startJewelEl.style.bottom = "auto";
 
+        startJewelEl.classList.add("jewel-ready");
     }
 
 }
