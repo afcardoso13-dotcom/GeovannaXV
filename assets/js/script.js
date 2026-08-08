@@ -292,7 +292,7 @@ btnGrandeDia.addEventListener("click", () => {
 
         image:"",
 
-        title:"✨ O Grande Dia",
+        title:'<span class="grande-dia-title">✨ O Grande Dia</span>',
 
         text:`
             <div class="grande-dia">
@@ -400,16 +400,31 @@ btnDressCode.addEventListener("click", () => {
         title:'<span class="dress-code-title">✨ Dress Code</span>',
 
         text:`
+
             <div class="dress-code">
 
                 <p class="dress-intro">
                     Nossa noite de gala será especial e cheia de brilho! ✨
                 </p>
 
+                <!-- PEDIDO ESPECIAL -->
+                <div class="modal-card">
+
+                    <h3>💙 Um pedido especial</h3>
+
+                    <p>
+                        Pedimos apenas que evitem roupas em tons de
+                        <strong>azul</strong>, para que essa cor fique
+                        reservada à aniversariante.
+                    </p>
+
+                </div>
+
                 <p class="dress-intro">
                     Para entrar no clima da festa, sugerimos:
                 </p>
 
+                <!-- MULHERES -->
                 <div class="modal-card">
 
                     <h3>👗 Mulheres</h3>
@@ -423,6 +438,7 @@ btnDressCode.addEventListener("click", () => {
 
                 </div>
 
+                <!-- HOMENS -->
                 <div class="modal-card">
 
                     <h3>🤵 Homens</h3>
@@ -432,19 +448,9 @@ btnDressCode.addEventListener("click", () => {
                         Nos pés, sapato social ou tênis em estilo esporte fino.
                     </p>
 
-                </div>
-
-                <div class="dress-alert">
-                    <strong>💙 Um pedido especial</strong>
-
-                    <p>
-                        Pedimos apenas que evitem roupas em tons de
-                        <strong>azul</strong>, para que essa cor fique
-                        reservada à aniversariante.
-                    </p>
-                </div>
 
             </div>
+
         `,
 
         button:null
