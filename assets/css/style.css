@@ -719,3 +719,270 @@ INTRODUÇÃO DA LISTA DE PRESENTES
 
 }
 
+
+
+/* =====================================================
+   O GRANDE DIA
+===================================================== */
+
+.grande-dia{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.evento-data,
+.evento-hora{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin:12px 0;
+
+    padding:14px 16px;
+
+    border-radius:16px;
+
+    text-align:left;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,215,120,.18);
+
+}
+
+.evento-icone{
+
+    font-size:25px;
+
+    flex-shrink:0;
+
+}
+
+.evento-data strong,
+.evento-hora strong{
+
+    display:block;
+
+    color:#FFFFFF;
+
+    font-size:16px;
+
+}
+
+.evento-data small,
+.evento-hora small{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:rgba(255,255,255,.68);
+
+    font-size:12px;
+
+}
+
+.contagem-titulo{
+
+    margin:22px 0 12px;
+
+    color:#FFE3A5;
+
+    font-size:15px;
+
+}
+
+.countdown{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:7px;
+
+    width:100%;
+
+}
+
+.countdown-item{
+
+    padding:12px 5px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.09);
+
+    border:1px solid rgba(255,215,120,.20);
+
+}
+
+.countdown-item strong{
+
+    display:block;
+
+    color:#FFFFFF;
+
+    font-size:24px;
+
+    line-height:1.1;
+
+}
+
+.countdown-item span{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:#FFE3A5;
+
+    font-size:9px;
+
+    letter-spacing:.4px;
+
+}
+
+.evento-mensagem{
+
+    margin-top:20px;
+
+    color:rgba(255,255,255,.85);
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+.evento-chegou{
+
+    grid-column:1 / -1;
+
+    padding:22px 10px;
+
+    border-radius:16px;
+
+    color:#FFE3A5;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,215,120,.30);
+
+}
+
+
+/* =====================================================
+   DRESS CODE
+===================================================== */
+
+.dress-code{
+
+    text-align:left;
+
+}
+
+.dress-intro{
+
+    color:#F5F5F5;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    text-align:center;
+
+    margin-bottom:14px;
+
+}
+
+.dress-code .modal-card{
+
+    margin:14px 0;
+
+}
+
+.dress-code .modal-card p{
+
+    line-height:1.75;
+
+}
+
+.dress-alert{
+
+    margin-top:16px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    background:rgba(157,190,234,.10);
+
+    border:1px solid rgba(255,215,120,.30);
+
+}
+
+.dress-alert strong{
+
+    color:#FFE3A5;
+
+}
+
+.dress-alert p{
+
+    margin-top:10px;
+
+    color:#F5F5F5;
+
+    font-size:14px;
+
+    line-height:1.75;
+
+}
+
+@media (max-width:480px){
+
+    .modal-box{
+
+        padding:28px 22px;
+
+        max-height:90vh;
+
+    }
+
+    .countdown{
+
+        gap:5px;
+
+    }
+
+    .countdown-item{
+
+        padding:10px 3px;
+
+    }
+
+    .countdown-item strong{
+
+        font-size:20px;
+
+    }
+
+    .countdown-item span{
+
+        font-size:8px;
+
+    }
+
+}

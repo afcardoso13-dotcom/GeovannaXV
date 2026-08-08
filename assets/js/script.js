@@ -247,7 +247,7 @@ btnWhatsapp.addEventListener("click", () => {
 
             text:"Confirmar pelo WhatsApp",
 
-            link:"https://wa.me/SEUNUMERO"
+            link:"https://wa.me/5541996844263?text=Ol%C3%A1%21%20Gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20XV%20da%20Geovanna.%20%F0%9F%92%99%E2%9C%A8"
 
         }
 
@@ -266,7 +266,70 @@ btnGrandeDia.addEventListener("click", () => {
 
     animarBotao(btnGrandeDia);
 
-    console.log("Grande Dia");
+    abrirModal({
+
+        image:"",
+
+        title:"✨ O Grande Dia",
+
+        text:`
+            <div class="grande-dia">
+
+                <div class="evento-data">
+                    <span class="evento-icone">📅</span>
+                    <div>
+                        <strong>19 de dezembro de 2026</strong>
+                        <small>Sábado</small>
+                    </div>
+                </div>
+
+                <div class="evento-hora">
+                    <span class="evento-icone">🕐</span>
+                    <div>
+                        <strong>20:00</strong>
+                        <small>Horário da celebração</small>
+                    </div>
+                </div>
+
+                <p class="contagem-titulo">Faltam apenas...</p>
+
+                <div class="countdown" id="countdown">
+
+                    <div class="countdown-item">
+                        <strong id="countDays">--</strong>
+                        <span>DIAS</span>
+                    </div>
+
+                    <div class="countdown-item">
+                        <strong id="countHours">--</strong>
+                        <span>HORAS</span>
+                    </div>
+
+                    <div class="countdown-item">
+                        <strong id="countMinutes">--</strong>
+                        <span>MINUTOS</span>
+                    </div>
+
+                    <div class="countdown-item">
+                        <strong id="countSeconds">--</strong>
+                        <span>SEGUNDOS</span>
+                    </div>
+
+                </div>
+
+                <p class="evento-mensagem">
+                    Prepare-se para viver uma noite inesquecível,
+                    cheia de magia, alegria e momentos especiais. 💙✨
+                </p>
+
+            </div>
+        `,
+
+        button:null
+
+    });
+
+    iniciarContagemRegressiva();
 
 });
 
@@ -317,7 +380,63 @@ btnDressCode.addEventListener("click", () => {
 
     animarBotao(btnDressCode);
 
-    console.log("Dress Code");
+    abrirModal({
+
+        image:"",
+
+        title:"✨ Dress Code",
+
+        text:`
+            <div class="dress-code">
+
+                <p class="dress-intro">
+                    Nossa noite de gala será especial e cheia de brilho! ✨
+                </p>
+
+                <p class="dress-intro">
+                    Para entrar no clima da festa, sugerimos:
+                </p>
+
+                <div class="modal-card">
+
+                    <h3>👗 Mulheres</h3>
+
+                    <p>
+                        Vestido longo de festa ou conjunto social.
+                        Fique à vontade para vir de salto, mas, se preferir,
+                        traga também sua <strong>Havaianas</strong>, porque vamos
+                        dançar a noite toda! 💃✨
+                    </p>
+
+                </div>
+
+                <div class="modal-card">
+
+                    <h3>🤵 Homens</h3>
+
+                    <p>
+                        Camisa e calça social, terno e gravata.
+                        Nos pés, sapato social ou tênis em estilo esporte fino.
+                    </p>
+
+                </div>
+
+                <div class="dress-alert">
+                    <strong>💙 Um pedido especial</strong>
+
+                    <p>
+                        Pedimos apenas que evitem roupas em tons de
+                        <strong>azul</strong>, para que essa cor fique
+                        reservada à aniversariante.
+                    </p>
+                </div>
+
+            </div>
+        `,
+
+        button:null
+
+    });
 
 });
 
@@ -456,6 +575,79 @@ btnPresentes.addEventListener("click", () => {
     });
 
 });
+
+// ======================================================
+// CONTAGEM REGRESSIVA — O GRANDE DIA
+// ======================================================
+
+let countdownTimer = null;
+
+function iniciarContagemRegressiva(){
+
+    clearInterval(countdownTimer);
+
+    const dataEvento = new Date("2026-12-19T19:00:00-03:00");
+
+    function atualizarContagem(){
+
+        const agora = new Date();
+        const diferenca = dataEvento.getTime() - agora.getTime();
+
+        const days = document.getElementById("countDays");
+        const hours = document.getElementById("countHours");
+        const minutes = document.getElementById("countMinutes");
+        const seconds = document.getElementById("countSeconds");
+        const countdown = document.getElementById("countdown");
+
+        if(!days || !hours || !minutes || !seconds) return;
+
+        if(diferenca <= 0){
+
+            days.textContent = "0";
+            hours.textContent = "0";
+            minutes.textContent = "0";
+            seconds.textContent = "0";
+
+            if(countdown){
+
+                countdown.innerHTML = `
+                    <div class="evento-chegou">
+                        ✨ O grande dia chegou! ✨
+                    </div>
+                `;
+
+            }
+
+            clearInterval(countdownTimer);
+
+            return;
+
+        }
+
+        const totalSegundos = Math.floor(diferenca / 1000);
+
+        const dias = Math.floor(totalSegundos / 86400);
+        const horas = Math.floor((totalSegundos % 86400) / 3600);
+        const minutos = Math.floor((totalSegundos % 3600) / 60);
+        const segundos = totalSegundos % 60;
+
+        days.textContent = dias;
+        hours.textContent = String(horas).padStart(2,"0");
+        minutes.textContent = String(minutos).padStart(2,"0");
+        seconds.textContent = String(segundos).padStart(2,"0");
+
+    }
+
+    atualizarContagem();
+
+    countdownTimer = setInterval(atualizarContagem,1000);
+
+}
+
+
+// ======================================================
+// PLAYER RESPONSIVO
+// ======================================================
 
 let atualizarPlayerTimer = null;
 
