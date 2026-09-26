@@ -501,7 +501,7 @@ btnPresentes.addEventListener("click", () => {
 
         button:{
             text:"🎁 Ver Lista de Presentes",
-            link:"COLOQUE_AQUI_O_LINK"
+            link:"https://app.mywishlist.co/biancaaraujo-rdek/geoxv-hvrh"
         }
 
     });
